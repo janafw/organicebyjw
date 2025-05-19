@@ -200,5 +200,20 @@
   <footer>
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  // Optional: close the menu when a nav link is clicked
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+    });
+  });
+</script>
 </body>
 </html>
