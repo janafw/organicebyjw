@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OrgaNICE by JW | Scheduling</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ffffff;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 5px 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #f3ae17, #69418b);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .scheduling {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      border-left: 6px solid #f3ae17;
+      border-right: 6px solid #69418b;
+      border-radius: 10px;
+    }
+
+    .scheduling h2 {
+      color: #69418b;
+      text-align: center;
+    }
+
+    .scheduling p {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .scheduling a {
+      display: inline-block;
+      background-color: #69418b;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .scheduling a:hover {
+      background-color: #53157a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #f3ae17;
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 8px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 40px 15px;
+      }
+
+      .scheduling {
+        margin: 20px 15px;
+        padding: 15px;
+      }
+
+      .scheduling a {
+        padding: 12px 20px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        display: block;
+        margin: 8px 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html">Services</a>
+      <a href="scheduling.html">Scheduling</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Schedule a Session</h1>
+    <p>Your journey to a more organized space starts here.</p>
+  </section>
+
+  <section class="scheduling">
+    <h2>Let’s Get You Scheduled</h2>
+    <p>Please click below to schedule a free consultation. We’ll talk about your space, your needs, and how OrgaNICE can help bring peace and order to your environment.</p>
+    <div style="text-align: center;">
+      <a href="https://calendly.com/organicebyjw" target="_blank">Book on Calendly</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 OrgaNICE by JW. All rights reserved.
+  </footer>
+</body>
+</html>

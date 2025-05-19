@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OrgaNICE by JW | Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ffffff;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+    }
+   .hero {
+      background: linear-gradient(to right, #f3ae17, #69418b);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .gallery {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .before-after-set {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .before-after-set img {
+      width: 45%;
+      max-width: 600px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .before-after-set img:hover {
+      transform: scale(1.05);
+    }
+    /* Lightbox styles */
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    #lightbox.active {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 95vw;
+      max-height: 90vh;
+      border-radius: 10px;
+      object-fit: contain;
+      user-select: none;
+    }
+    #closeBtn {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 3rem;
+      font-weight: bold;
+      transition: color 0.2s;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      z-index: 10000;
+    }
+    #closeBtn:hover {
+      color: #ffeb3b;
+    }
+    #prevBtn, #nextBtn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 4rem;
+      font-weight: bold;
+      transition: color 0.2s;
+      user-select: none;
+      padding: 0 15px;
+      z-index: 10000;
+    }
+    #prevBtn:hover, #nextBtn:hover {
+      color: #ffeb3b;
+    }
+    #prevBtn {
+      left: 10px;
+    }
+    #nextBtn {
+      right: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #f3ae17;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo" height="60" />
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html">Services</a>
+      <a href="scheduling.html">Scheduling</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Gallery</h1>
+    <p>See the difference professional organizing can make!</p>
+  </section>
+
+  <section class="gallery">
+    <div class="before-after-set">
+      <img src="before-office.jpg" alt="Before" data-index="0" />
+      <img src="after-office.jpg" alt="After" data-index="1" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-closet1.jpg" alt="Before" data-index="2" />
+      <img src="after-closet1.jpg" alt="After" data-index="3" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-closet2.jpg" alt="Before" data-index="4" />
+      <img src="after-closet2.jpg" alt="After" data-index="5" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-closet3.jpg" alt="Before" data-index="6" />
+      <img src="after-closet3.jpg" alt="After" data-index="7" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-closet3.jpg" alt="Before" data-index="8" />
+      <img src="after-closet3.jpg" alt="After" data-index="9" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-pantry1.jpg" alt="Before" data-index="10" />
+      <img src="after-pantry1.jpg" alt="After" data-index="11" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-pantry2.jpg" alt="Before" data-index="12" />
+      <img src="after-pantry2.jpg" alt="After" data-index="13" />
+    </div>
+    <div class="before-after-set">
+      <img src="drawers1.jpg" alt="Drawers" data-index="14" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-closet4.jpg" alt="Before" data-index="16" />
+      <img src="after-closet4.jpg" alt="After" data-index="17" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-cabinet1.jpg" alt="Before" data-index="18" />
+      <img src="after-cabinet1.jpg" alt="After" data-index="19" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-drawer1.jpg" alt="Before" data-index="20" />
+      <img src="after-drawer1.jpg" alt="After" data-index="21" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-closet5.jpg" alt="Before" data-index="22" />
+      <img src="after-closet5.jpg" alt="After" data-index="23" />
+    </div>
+    <div class="before-after-set">
+      <img src="before-closet6.jpg" alt="Before" data-index="24" />
+      <img src="after-closet6.jpg" alt="After" data-index="25" />
+    </div>
+    <div class="before-after-set">
+      <img src="after-closet7.jpg" alt="After" data-index="26" />
+    </div>
+    <div class=before-after-set">
+      <div style="display: flex; justify-content: center;">
+  <video controls style="width: 300px; height: auto;">
+    <source src="video-closet7.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+</video>
+
+    </div>
+       
+  </section>
+
+  <div id="lightbox" aria-modal="true" role="dialog" aria-label="Image viewer">
+    <button id="closeBtn" aria-label="Close">&times;</button>
+    <button id="prevBtn" aria-label="Previous">&#10094;</button>
+    <img src="" alt="Expanded photo" />
+    <button id="nextBtn" aria-label="Next">&#10095;</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 OrgaNICE by JW. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const closeBtn = document.getElementById('closeBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = images[currentIndex].src;
+      lightboxImg.alt = images[currentIndex].alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+      lightboxImg.alt = images[currentIndex].alt;
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+      lightboxImg.alt = images[currentIndex].alt;
+    }
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => openLightbox(index));
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>

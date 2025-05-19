@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OrgaNICE by JW | Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ffffff;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 5px 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #f3ae17, #69418b);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .contact {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .contact-image {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact label {
+      margin-top: 10px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .contact button {
+      margin-top: 15px;
+      background-color: #69418b;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      background-color: #53157a;
+    }
+
+    .status-message {
+      margin-top: 15px;
+      padding: 10px;
+      display: none;
+      border-radius: 6px;
+    }
+
+    .status-success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .status-error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #f3ae17;
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        margin: 10px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 40px 15px;
+      }
+
+      .contact {
+        margin: 20px 15px;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        display: block;
+        margin: 8px 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .contact button {
+        font-size: 14px;
+      }
+.contact-link-button {
+  display: inline-block;
+  background-color: #69418b;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-link-button:hover {
+  background-color: #53157a;
+}
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html">Services</a> 
+      <a href="scheduling.html">Scheduling</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Connect with JW</h1>
+   
+  </section>
+
+  <section class="contact">
+    <div class="contact-image">
+      <img src="organice-logo.jpg" alt="Business Card">
+    </div>
+    <h2>Let's Connect</h2>
+<div class="contact-buttons" style="text-align: center; margin-top: 20px;">
+  <p><a href="tel:9722468115" class="contact-link-button">972-246-8115</a></p>
+  <p><a href="mailto:organicebyjw@gmail.com" class="contact-link-button">organicebyjw@gmail.com</a></p>
+</div>
+
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/organicebyjw" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">LinkedIn</a>
+    </div>
+
+    <form id="contactForm" action="https://formspree.io/f/mqaqnleg" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <input type="hidden" name="_redirect" value="thank-you.html">
+
+      <button type="submit">Send Message</button>
+      <div id="status" class="status-message"></div>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 OrgaNICE by JW. All rights reserved.
+  </footer>
+</body>
+</html>

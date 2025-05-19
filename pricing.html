@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OrgaNICE by JW | Packages & Prices</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ffffff;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 5px 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #f3ae17, #69418b);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .pricing {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      border-left: 6px solid #f3ae17;
+      border-right: 6px solid #69418b;
+      border-radius: 10px;
+    }
+
+    .pricing h2 {
+      color: #69418b;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .package {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .package h3 {
+      color: #f3ae17;
+      margin-top: 0;
+    }
+
+    .package ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .package ul li::before {
+      content: "✓";
+      color: #69418b;
+      margin-right: 10px;
+    }
+
+    .price {
+      font-size: 1.2em;
+      color: #69418b;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #f3ae17;
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 8px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 40px 15px;
+      }
+
+      .pricing {
+        margin: 20px 15px;
+        padding: 15px;
+      }
+
+      .package {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        display: block;
+        margin: 8px 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .price {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Packages</a>
+      <a href="scheduling.html">Scheduling</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Packages & Prices</h1>
+    <p>Choose the perfect package for your space and goals.</p>
+  </section>
+
+  <section class="pricing">
+    <h2>Please connect with me to consult about packages & prices.</h2>
+  </section>
+
+  <footer>
+    &copy; 2025 OrgaNICE by JW. All rights reserved.
+  </footer>
+</body>
+</html>
