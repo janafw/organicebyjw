@@ -255,58 +255,60 @@
 
   <script>
     const photoTrack = document.querySelector('.photo-track');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+let isDown = false;
+let startX;
+let scrollLeft;
 
-    photoTrack.addEventListener('mousedown', (e) => {
-      isDown = true;
-      photoTrack.classList.add('dragging');
-      startX = e.pageX - photoTrack.offsetLeft;
-      scrollLeft = photoTrack.scrollLeft;
-    });
+photoTrack.addEventListener('mousedown', (e) => {
+  isDown = true;
+  photoTrack.classList.add('dragging');
+  startX = e.clientX - photoTrack.offsetLeft;
+  scrollLeft = photoTrack.scrollLeft;
+});
 
-    photoTrack.addEventListener('mouseleave', () => {
-      isDown = false;
-      photoTrack.classList.remove('dragging');
-    });
+photoTrack.addEventListener('mouseleave', () => {
+  isDown = false;
+  photoTrack.classList.remove('dragging');
+});
 
-    photoTrack.addEventListener('mouseup', () => {
-      isDown = false;
-      photoTrack.classList.remove('dragging');
-    });
+photoTrack.addEventListener('mouseup', () => {
+  isDown = false;
+  photoTrack.classList.remove('dragging');
+});
 
-    photoTrack.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - photoTrack.offsetLeft;
-      const walk = (x - startX) * 2; // Scroll speed
-      photoTrack.scrollLeft = scrollLeft - walk;
-    });
+photoTrack.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.clientX - photoTrack.offsetLeft;
+  const walk = (x - startX) * 2; // scroll speed
+  photoTrack.scrollLeft = scrollLeft - walk;
+});
 
-    photoTrack.addEventListener('touchstart', (e) => {
-      isDown = true;
-      photoTrack.classList.add('dragging');
-      startX = e.touches[0].pageX - photoTrack.offsetLeft;
-      scrollLeft = photoTrack.scrollLeft;
-    });
+photoTrack.addEventListener('touchstart', (e) => {
+  isDown = true;
+  photoTrack.classList.add('dragging');
+  startX = e.touches[0].clientX - photoTrack.offsetLeft;
+  scrollLeft = photoTrack.scrollLeft;
+});
 
-    photoTrack.addEventListener('touchmove', (e) => {
-      if (!isDown) return;
-      const x = e.touches[0].pageX - photoTrack.offsetLeft;
-      const walk = (x - startX) * 2;
-      photoTrack.scrollLeft = scrollLeft - walk;
-    }, { passive: false });
+photoTrack.addEventListener('touchmove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();  // <== IMPORTANT to prevent page scrolling while dragging
+  const x = e.touches[0].clientX - photoTrack.offsetLeft;
+  const walk = (x - startX) * 2; // scroll speed
+  photoTrack.scrollLeft = scrollLeft - walk;
+}, { passive: false });
 
-    photoTrack.addEventListener('touchend', () => {
-      isDown = false;
-      photoTrack.classList.remove('dragging');
-    });
+photoTrack.addEventListener('touchend', () => {
+  isDown = false;
+  photoTrack.classList.remove('dragging');
+});
 
-    photoTrack.addEventListener('touchcancel', () => {
-      isDown = false;
-      photoTrack.classList.remove('dragging');
-    });
+photoTrack.addEventListener('touchcancel', () => {
+  isDown = false;
+  photoTrack.classList.remove('dragging');
+});
+
   </script>
 </body>
 </html>
