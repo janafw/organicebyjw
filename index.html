@@ -97,7 +97,7 @@
     .photo-track {
       display: flex;
       gap: 20px;
-      animation: scrollPhotos 40s linear infinite;
+      animation: scrollPhotos 20s linear infinite;
       width: fit-content;
     }
 
@@ -195,6 +195,11 @@
       width: 100%;
     }
   }
+.photo-track.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
   </style>
 </head>
 <body>
@@ -262,5 +267,49 @@
     });
   });
 </script>
+<script>
+  const photoTrack = document.querySelector('.photo-track');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  photoTrack.addEventListener('mousedown', (e) => {
+    isDown = true;
+    photoTrack.classList.add('dragging');
+    startX = e.pageX - photoTrack.offsetLeft;
+    scrollLeft = photoTrack.scrollLeft;
+  });
+
+  photoTrack.addEventListener('mouseleave', () => {
+    isDown = false;
+    photoTrack.classList.remove('dragging');
+  });
+
+  photoTrack.addEventListener('mouseup', () => {
+    isDown = false;
+    photoTrack.classList.remove('dragging');
+  });
+
+  photoTrack.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - photoTrack.offsetLeft;
+    const walk = (x - startX) * 2; // scroll-fast
+    photoTrack.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch support
+  photoTrack.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].pageX;
+    scrollLeft = photoTrack.scrollLeft;
+  });
+
+  photoTrack.addEventListener('touchmove', (e) => {
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 2;
+    photoTrack.scrollLeft = scrollLeft - walk;
+  });
+</script>
+
 </body>
 </html>
