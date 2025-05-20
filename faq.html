@@ -115,24 +115,67 @@
         padding: 15px;
       }
     }
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #6a1b9a;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #ffffff;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo" height="60" />
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Packages</a>
-      <a href="scheduling.html">Scheduling</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="faq.html">FAQ</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">
+    <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+  </div>
+  <div id="menu-toggle" class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="services.html">Services</a>
+    <a href="scheduling.html">Scheduling</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
 
   <section class="hero">
     <h1>Frequently Asked Questions</h1>
@@ -171,5 +214,20 @@
   <footer>
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  // Optional: close the menu when a nav link is clicked
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+    });
+  });
+</script>
 </body>
 </html>
