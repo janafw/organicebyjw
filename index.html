@@ -112,8 +112,16 @@
     .photo-track {
       display: flex;
       gap: 20px;
-      animation: scrollPhotos 20s linear infinite;
-      width: fit-content;
+      width: max-content;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      cursor: grab;
+      -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+    }
+
+    .photo-track.dragging {
+      cursor: grabbing;
+      user-select: none;
     }
 
     .photo-track img {
@@ -121,17 +129,7 @@
       width: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    @keyframes scrollPhotos {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .photo-track.dragging {
-      cursor: grabbing;
-      user-select: none;
-      animation-play-state: paused;
+      flex-shrink: 0;
     }
 
     /* Footer */
@@ -170,10 +168,6 @@
         padding: 10px 0;
         font-size: 1rem;
         width: 100%;
-      }
-
-      .photo-track {
-        animation-duration: 60s;
       }
 
       .photo-track img {
@@ -226,7 +220,7 @@
       <img src="after-office.jpg" alt="After Office">
       <img src="before-closet3.jpg" alt="Before Closet 3">
       <img src="after-closet3.jpg" alt="After Closet 3">
-      <!-- duplicated set for loop -->
+      <!-- duplicated set for loop (optional, but no animation now) -->
       <img src="before-closet1.jpg" alt="Before Closet Duplicate">
       <img src="after-closet1.jpg" alt="After Closet Duplicate">
       <img src="before-bathroom1.jpg" alt="Before Bathroom Duplicate">
@@ -286,21 +280,33 @@
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - photoTrack.offsetLeft;
-      const walk = (x - startX) * 2;
+      const walk = (x - startX) * 2; // Scroll speed
       photoTrack.scrollLeft = scrollLeft - walk;
     });
 
     photoTrack.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].pageX;
+      isDown = true;
+      photoTrack.classList.add('dragging');
+      startX = e.touches[0].pageX - photoTrack.offsetLeft;
       scrollLeft = photoTrack.scrollLeft;
     });
 
     photoTrack.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-      const x = e.touches[0].pageX;
+      if (!isDown) return;
+      const x = e.touches[0].pageX - photoTrack.offsetLeft;
       const walk = (x - startX) * 2;
       photoTrack.scrollLeft = scrollLeft - walk;
     }, { passive: false });
+
+    photoTrack.addEventListener('touchend', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
+
+    photoTrack.addEventListener('touchcancel', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
   </script>
 </body>
 </html>
