@@ -14,6 +14,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OrgaNICE by JW | About Me</title>
   <link rel="stylesheet" href="style.css"/>
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  ...
+</head>
+
   <style>
     body {
       background-color: #ffffff;
@@ -201,6 +206,21 @@
     padding: 10px 0;
     width: 100%;
   }
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #69418b;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f3ae17;
+}
+
 }
 
   </style>
@@ -251,9 +271,16 @@
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 OrgaNICE by JW. All rights reserved.
-  </footer>
+ <footer>
+
+  <div class="social-icons">
+    <a href="https://www.instagram.com/yourusername" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/yourusername" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.tiktok.com/@yourusername" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+ &copy; 2025 OrgaNICE by JW. All rights reserved.
+</footer>
+
 <script>
   const menuToggle = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
