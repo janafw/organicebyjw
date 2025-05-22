@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQ9T87YHX9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZQ9T87YHX9');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQ9T87YHX9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZQ9T87YHX9');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OrgaNICE by JW | Home</title>
@@ -138,12 +137,28 @@
       font-size: 16px;
     }
 
-   .social-links a i {
-   margin-right: 8px;
-   font-size: 20px;
-   vertical-align: middle;
-   }
+    .social-links a i {
+      margin-right: 8px;
+      font-size: 20px;
+      vertical-align: middle;
+    }
 
+    .contact-link-button {
+      display: inline-block;
+      background-color: #69418b;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-link-button:hover {
+      background-color: #53157a;
+    }
 
     footer {
       text-align: center;
@@ -199,118 +214,100 @@
       .contact button {
         font-size: 14px;
       }
-.contact-link-button {
-  display: inline-block;
-  background-color: #69418b;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.contact-link-button:hover {
-  background-color: #53157a;
-}
-
     }
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
 
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background-color: #6a1b9a;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: 0.3s;
-}
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #6a1b9a;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
 
-  nav {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #ffffff;
-  }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
 
-  nav.active {
-    display: flex;
-  }
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #ffffff;
+      }
 
-  nav a {
-    padding: 10px 0;
-    width: 100%;
-  }
-}
+      nav.active {
+        display: flex;
+      }
 
+      nav a {
+        padding: 10px 0;
+        width: 100%;
+      }
+    }
   </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
- <header>
-  <div class="logo">
-    <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
-  </div>
-  <div id="menu-toggle" class="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <nav id="nav-menu">
-    <a href="home.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="services.html">Services</a>
-    <a href="scheduling.html">Scheduling</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-    <a href="faq.html">FAQ</a>
 
-  </nav>
-</header>
-
+  <header>
+    <div class="logo">
+      <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+    </div>
+    <div id="menu-toggle" class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav-menu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html">Services</a>
+      <a href="scheduling.html">Scheduling</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
 
   <section class="hero">
     <h1>Connect with JW</h1>
-   
   </section>
 
   <section class="contact">
     <div class="contact-image">
       <img src="organice-logo.jpg" alt="Business Card">
     </div>
-    <h2>Let's Connect</h2>
-<div class="contact-buttons" style="text-align: center; margin-top: 20px;">
-  <p><a href="tel:9722468115" class="contact-link-button">972-246-8115</a></p>
-  <p><a href="mailto:organicebyjw@gmail.com" class="contact-link-button">organicebyjw@gmail.com</a></p>
-</div>
+    <h2>Ready to take the next step?</h2>
+    <p>Whether you're planning a move, decluttering for comfort, or helping a loved one transition to a new home, I would be honored to assist.
+      Please reach out via phone, email, or the form below. I offer complimentary phone consultations to understand your needs and determine how I can best support you.
+    </p>
 
+    <div class="contact-buttons" style="text-align: center; margin-top: 20px;">
+      <p><a href="tel:9722468115" class="contact-link-button">972-246-8115</a></p>
+      <p><a href="mailto:organicebyjw@gmail.com" class="contact-link-button">organicebyjw@gmail.com</a></p>
+    </div>
 
-   <div class="social-links">
-  <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">
-    <i class="fab fa-facebook-square"></i> Facebook
-  </a>
-  <a href="https://www.instagram.com/organicebyjw" target="_blank">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-  <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">
-    <i class="fab fa-linkedin"></i> LinkedIn
-  </a>
-</div>
-
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">
+        <i class="fab fa-facebook-square"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/organicebyjw" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
 
     <form id="contactForm" action="https://formspree.io/f/mqaqnleg" method="POST">
       <label for="name">Name</label>
@@ -318,7 +315,6 @@
 
       <label for="phone number">Phone Number</label>
       <input type="text" id="phone number" name="phone number" required>
-
 
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
@@ -334,23 +330,23 @@
   </section>
 
   <footer>
-
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
 
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-  // Optional: close the menu when a nav link is clicked
-  document.querySelectorAll('#nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
     });
-  });
-</script>
+
+    // Optional: close the menu when a nav link is clicked
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
