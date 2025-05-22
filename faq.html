@@ -14,6 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OrgaNICE by JW | FAQ</title>
   <link rel="stylesheet" href="style.css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
   <style>
     body {
       background-color: #ffffff;
@@ -27,21 +28,21 @@
       align-items: center;
       padding: 10px 20px;
       background-color: #ffffff;
-      flex-wrap: wrap; /* allow wrapping on small screens */
+      
     }
     nav {
       display: flex;
       flex-wrap: wrap; /* wrap nav links */
-      justify-content: center;
+      justify-content: flex-end;
       width: 100%; /* full width nav on small devices */
       margin-top: 10px;
     }
-    nav a {
+   nav a {
       margin: 5px 10px;
       text-decoration: none;
       color: #6a1b9a;
       font-weight: bold;
-      white-space: nowrap;
+      font-size: 16px;;
     }
     .hero {
       background: linear-gradient(to right, #f3ae17, #69418b);
@@ -80,6 +81,38 @@
       color: #333333;
       font-size: 1rem;
     }
+.social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .social-links a i {
+      margin-right: 8px;
+      font-size: 20px;
+      vertical-align: middle;
+    }
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #69418b;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f3ae17;
+}
     footer {
       text-align: center;
       padding: 20px;
@@ -139,27 +172,37 @@
   transition: 0.3s;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
+/* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
+      nav {
+        width: 100%;
+        justify-content: ;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        margin: 10px;
+        font-size: 14px;
+      }
+/* Hide nav by default on mobile */
+@media (max-width: 768px) {
   nav {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
     width: 100%;
-    padding: 10px 20px;
-    background-color: #ffffff;
   }
 
   nav.active {
     display: flex;
   }
 
-  nav a {
-    padding: 10px 0;
-    width: 100%;
+  .menu-toggle {
+    display: flex;
   }
 }
 
@@ -182,6 +225,7 @@
     <a href="scheduling.html">Scheduling</a>
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
+    <a href="faq.html">FAQ</a>
   </nav>
 </header>
 
@@ -195,32 +239,50 @@
     <h2>FAQ</h2>
 
     <div class="faq-item">
-      <div class="faq-question">What services do you offer?</div>
-      <div class="faq-answer">We specialize in home and office organization, including closets, kitchens, offices, and more personalized spaces.</div>
+      <div class="faq-question">Q: What does a professional organizer do?</div>
+      <div class="faq-answer">A: I help you sort, declutter, and set up personalized systems so your home functions better and feels calmer. I tailor every project to your space, needs, and comfort level.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">How do I schedule an appointment?</div>
-      <div class="faq-answer">You can visit our Scheduling page to book your consultation or reach out via the Contact page.</div>
+      <div class="faq-question">Q: What makes your organizing approach different?</div>
+      <div class="faq-answer">A: I work one-on-one with clients and specialize in serving seniors with patience, discretion, and empathy. I take the time to listen, understand your goals, and work at your pace without pressure.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Do you offer virtual consultations?</div>
-      <div class="faq-answer">Yes, we offer virtual consultations to help you get started no matter where you are.</div>
+      <div class="faq-question">Q: How long does a typical session last?</div>
+      <div class="faq-answer">A: Most sessions are 3-4 hours, but I tailor the length based on your comfort and energy levels. We can always pause and resume when you're ready. Also, keep in mind that it depends on the size of the space and how much we're working through, but we’ll make steady progress each session.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">What are your pricing packages?</div>
-      <div class="faq-answer">Please check our Packages page for detailed pricing options tailored to different organization needs.</div>
+      <div class="faq-question">Q: Do I need to buy containers or supplies?</div>
+      <div class="faq-answer">A: Not at all. I focus on using what you already have whenever possible. If extra organizing tools are needed, I can recommend cost-effective, accommodation-friendly options.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">What is your cancellation policy?</div>
-      <div class="faq-answer">We ask for at least 24 hours notice for cancellations or rescheduling to avoid fees.</div>
+      <div class="faq-question">Q: Do I have to get rid of things?</div>
+      <div class="faq-answer">A: No-your stuff, your rules. I'll guide you through the decision-making process without pressure or judgment.</div>
     </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Q: Q: l'm neurodivergent-will you accommodate my needs?</div>
+      <div class="faq-answer">A: A: Absolutely. I tailor sessions to your pace, communication style, and sensory preferences.</div>
+    </div>
+
   </section>
 
   <footer>
+<div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">
+        <i class="fab fa-facebook-square"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/organicebyjw" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
 <script>
