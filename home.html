@@ -12,13 +12,14 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OrgaNICE by JW | Professional Organizer in Dallas, TX</title>
+  <title>OrgaNICE by JW | Home</title>
   <meta name="description" content="Personalized home and office organizing services to help you declutter, simplify, and create a space that works for you.">
   <meta name="keywords" content="home organizer, professional organizer, decluttering, organizing services, OrgaNICE by JW, organice">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.organicebyjw.com/" />
-  <title>OrgaNICE by JW | Home</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-bxWuc1Fz+1vZzE3zM57BGgJz+KUGP+sCEq8s6nM7+aJjzW7xJ9CFlFapFXgO7cJZlFZQ7oh6s1cXYDUcZ2UDWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     body {
       background-color: #ffffff;
@@ -121,7 +122,7 @@
       overflow-x: auto;
       scroll-behavior: smooth;
       cursor: grab;
-      -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+      -webkit-overflow-scrolling: touch;
       touch-action: pan-y;
     }
 
@@ -139,6 +140,25 @@
     }
 
     /* Footer */
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .social-links a i {
+      margin-right: 8px;
+      font-size: 20px;
+      vertical-align: middle;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -188,7 +208,7 @@
       <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
     </div>
 
-    <div class="menu-toggle" id="menu-toggle">
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
@@ -215,7 +235,6 @@
 
   <section class="photo-marquee">
     <div class="photo-track">
-      <!-- original set -->
       <img src="before-closet1.jpg" alt="Before Closet">
       <img src="after-closet1.jpg" alt="After Closet">
       <img src="before-bathroom1.jpg" alt="Before Bathroom">
@@ -226,7 +245,6 @@
       <img src="after-office.jpg" alt="After Office">
       <img src="before-closet3.jpg" alt="Before Closet 3">
       <img src="after-closet3.jpg" alt="After Closet 3">
-      <!-- duplicated set for loop (optional, but no animation now) -->
       <img src="before-closet1.jpg" alt="Before Closet Duplicate">
       <img src="after-closet1.jpg" alt="After Closet Duplicate">
       <img src="before-bathroom1.jpg" alt="Before Bathroom Duplicate">
@@ -241,6 +259,17 @@
   </section>
 
   <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">
+        <i class="fab fa-facebook-square"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/organicebyjw" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
 
@@ -261,60 +290,59 @@
 
   <script>
     const photoTrack = document.querySelector('.photo-track');
-let isDown = false;
-let startX;
-let scrollLeft;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-photoTrack.addEventListener('mousedown', (e) => {
-  isDown = true;
-  photoTrack.classList.add('dragging');
-  startX = e.clientX - photoTrack.offsetLeft;
-  scrollLeft = photoTrack.scrollLeft;
-});
+    photoTrack.addEventListener('mousedown', (e) => {
+      isDown = true;
+      photoTrack.classList.add('dragging');
+      startX = e.clientX - photoTrack.offsetLeft;
+      scrollLeft = photoTrack.scrollLeft;
+    });
 
-photoTrack.addEventListener('mouseleave', () => {
-  isDown = false;
-  photoTrack.classList.remove('dragging');
-});
+    photoTrack.addEventListener('mouseleave', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
 
-photoTrack.addEventListener('mouseup', () => {
-  isDown = false;
-  photoTrack.classList.remove('dragging');
-});
+    photoTrack.addEventListener('mouseup', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
 
-photoTrack.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.clientX - photoTrack.offsetLeft;
-  const walk = (x - startX) * 2; // scroll speed
-  photoTrack.scrollLeft = scrollLeft - walk;
-});
+    photoTrack.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.clientX - photoTrack.offsetLeft;
+      const walk = (x - startX) * 2;
+      photoTrack.scrollLeft = scrollLeft - walk;
+    });
 
-photoTrack.addEventListener('touchstart', (e) => {
-  isDown = true;
-  photoTrack.classList.add('dragging');
-  startX = e.touches[0].clientX - photoTrack.offsetLeft;
-  scrollLeft = photoTrack.scrollLeft;
-});
+    photoTrack.addEventListener('touchstart', (e) => {
+      isDown = true;
+      photoTrack.classList.add('dragging');
+      startX = e.touches[0].clientX - photoTrack.offsetLeft;
+      scrollLeft = photoTrack.scrollLeft;
+    });
 
-photoTrack.addEventListener('touchmove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();  // <== IMPORTANT to prevent page scrolling while dragging
-  const x = e.touches[0].clientX - photoTrack.offsetLeft;
-  const walk = (x - startX) * 2; // scroll speed
-  photoTrack.scrollLeft = scrollLeft - walk;
-}, { passive: false });
+    photoTrack.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.touches[0].clientX - photoTrack.offsetLeft;
+      const walk = (x - startX) * 2;
+      photoTrack.scrollLeft = scrollLeft - walk;
+    }, { passive: false });
 
-photoTrack.addEventListener('touchend', () => {
-  isDown = false;
-  photoTrack.classList.remove('dragging');
-});
+    photoTrack.addEventListener('touchend', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
 
-photoTrack.addEventListener('touchcancel', () => {
-  isDown = false;
-  photoTrack.classList.remove('dragging');
-});
-
+    photoTrack.addEventListener('touchcancel', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
   </script>
 </body>
 </html>
