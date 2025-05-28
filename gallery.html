@@ -47,6 +47,33 @@
       max-width: 1000px;
       margin: auto;
     }
+ .gallery-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+      .gallery-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+ .gallery-me {
+        margin: 20px 15px;
+        padding: 15px;
+      }
+.gallery-description {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      border-left: 6px solid #f3ae17;
+      border-right: 6px solid #69418b;
+      border-radius: 10px;
+    }
+
+
     .before-after-set {
       display: flex;
       justify-content: center;
@@ -202,6 +229,7 @@
     padding: 10px 0;
     width: 100%;
   }
+
 }
 
   </style>
@@ -231,9 +259,20 @@
 
   <section class="hero">
     <h1>Gallery</h1>
-   
+     
   </section>
+<section class="gallery-description">
+<div class="gallery-container">
 
+    Take a look at real homes transformed through practical, professional organizing.<br>
+    These photos show how everyday spaces—closets, kitchens, garages, and more—<br>
+    can be made more functional, less stressful, and easier to maintain.<br>
+    No perfection, just real solutions that work for real life.
+  </p>
+ 
+</div>
+
+</section>
   <section class="gallery">
     <div class="before-after-set">
       <img src="before-office.jpg" alt="Before" data-index="0" />
