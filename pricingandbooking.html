@@ -6,6 +6,7 @@
   <title>OrgaNICE by JW | Pricing & Booking</title>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
   <style>
     body {
       background-color: #ffffff;
@@ -13,13 +14,36 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
       background-color: #ffffff;
+      flex-wrap: wrap;
     }
+
+    .logo img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #6a1b9a;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -27,6 +51,7 @@
       width: 100%;
       margin-top: 10px;
     }
+
     nav a {
       margin: 5px 10px;
       text-decoration: none;
@@ -34,12 +59,14 @@
       font-weight: bold;
       font-size: 16px;
     }
+
     .hero {
       background: linear-gradient(to right, #f3ae17, #69418b);
       color: white;
       text-align: center;
       padding: 60px 20px;
     }
+
     .content-section {
       max-width: 800px;
       margin: 40px auto;
@@ -51,34 +78,41 @@
       box-sizing: border-box;
       width: 90%;
     }
+
     .content-section h2 {
       color: #69418b;
       font-size: 1.8rem;
       margin-bottom: 20px;
     }
+
     .step {
       margin-bottom: 30px;
     }
+
     .step h3 {
       color: #f3ae17;
       font-size: 1.2rem;
       margin-bottom: 10px;
     }
+
     .step ul {
       padding-left: 30px;
       margin: 0;
     }
+
     .step ul li {
       color: #69418b;
       line-height: 1.3;
       margin-bottom: 5px;
     }
+
     .step p {
       margin-left: 30px;
       color: #69418b;
       line-height: 1.5;
       margin-top: 0;
     }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -86,10 +120,12 @@
       color: #f3ae17;
       font-size: 0.9rem;
     }
+
     .social-links {
       text-align: center;
       margin-top: 20px;
     }
+
     .social-links a {
       margin: 0 10px;
       text-decoration: none;
@@ -97,11 +133,37 @@
       font-weight: bold;
       font-size: 16px;
     }
+
     .social-links a i {
       margin-right: 8px;
       font-size: 20px;
       vertical-align: middle;
     }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #ffffff;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px 0;
+        width: 100%;
+      }
+    }
+
     @media (max-width: 600px) {
       .hero { padding: 40px 15px; }
       .content-section { margin: 20px auto; padding: 15px; }
@@ -129,9 +191,11 @@
       <a href="faq.html">FAQ</a>
     </nav>
   </header>
+
   <section class="hero">
     <h1>Pricing & Booking</h1>
   </section>
+
   <section class="content-section">
     <div class="step">
       <h3>Rates & Session Structure</h3>
@@ -164,39 +228,37 @@
       <ul>
         <li><strong>New Clients:</strong> Book your first session anytime—no Goals Session required.</li>
       </ul>
-      
       <p>If you prefer to connect first, you can schedule a <a href="https://calendly.com/organicebyjw/consultation">complimentary 15-minute consultation</a> to talk through your goals, challenges, and the best approach for your space.</p>
-<br>
-<div style="text-align: center;">
-  <a href="https://calendly.com/organicebyjw/consultation" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0px;">
-    Schedule a Goals Session
-  </a>
-<br><br>
-</div>
-
+      <br>
+      <div style="text-align: center;">
+        <a href="https://calendly.com/organicebyjw/consultation" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0px;">
+          Schedule a Goals Session
+        </a>
+        <br><br>
+      </div>
       <ul>
         <li><strong>Returning Clients:</strong> Welcome back! Visit Calendly to book your next session and include updates in the form.</li>
       </ul>
-   <div style="text-align: center;">
-  <a href="https://calendly.com/organicebyjw/4-hour-session" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0px;">
-    Book Your Session
-  </a>
-
+      <div style="text-align: center;">
+        <a href="https://calendly.com/organicebyjw/4-hour-session" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0px;">
+          Book Your Session
+        </a>
+      </div>
     </div>
     <div class="step">
       <h3>Cancellation Policy</h3>
-     <ul><li>If something comes up within 48 hours due to unforeseen circumstances, please reach out as soon as possible so we can arrange an alternative appointment time.</ul></li>
-     <ul><li>There is no fee for cancellations made with timely notice. Advance communication helps keep the schedule running smoothly and respectfully for all clients.</ul></li>
-     <ul><li>Thank you for your consideration. I aim to offer flexible scheduling that supports your current needs and life transitions.</ul></li>
+      <ul><li>If something comes up within 48 hours due to unforeseen circumstances, please reach out as soon as possible so we can arrange an alternative appointment time.</li></ul>
+      <ul><li>There is no fee for cancellations made with timely notice. Advance communication helps keep the schedule running smoothly and respectfully for all clients.</li></ul>
+      <ul><li>Thank you for your consideration. I aim to offer flexible scheduling that supports your current needs and life transitions.</li></ul>
     </div>
-
   </section>
-<div class="step" style="text-align: center;">
-  <h3 style="color: #6a1b9a; margin: 0;">Need Help With Booking?</h3>
-  <p style="margin: 0; ">
-    <a href="contact.html"><u>Conact me</u></a> and I'll be happy to assist with scheduling you via Calendly.
-  </p>
-</div>
+
+  <div class="step" style="text-align: center;">
+    <h3 style="color: #6a1b9a; margin: 0;">Need Help With Booking?</h3>
+    <p style="margin: 0;">
+      <a href="contact.html"><u>Contact me</u></a> and I'll be happy to assist with scheduling you via Calendly.
+    </p>
+  </div>
 
   <footer>
     <div class="social-links">
@@ -206,12 +268,15 @@
     </div>
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
+
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
+
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
+
     document.querySelectorAll('#nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
