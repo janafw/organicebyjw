@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQ9T87YHX9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZQ9T87YHX9');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OrgaNICE by JW | Packages & Prices</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>OrgaNICE by JW | Pricing & Booking</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
   <style>
     body {
       background-color: #ffffff;
@@ -21,27 +13,20 @@
       margin: 0;
       padding: 0;
     }
-
     header {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
       background-color: #ffffff;
     }
-
-    .logo img {
-      height: 60px;
-    }
-
     nav {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-end;
+      width: 100%;
       margin-top: 10px;
     }
-
     nav a {
       margin: 5px 10px;
       text-decoration: none;
@@ -49,206 +34,190 @@
       font-weight: bold;
       font-size: 16px;
     }
-
     .hero {
       background: linear-gradient(to right, #f3ae17, #69418b);
       color: white;
       text-align: center;
       padding: 60px 20px;
     }
-
-    .pricing {
-      max-width: 900px;
+    .content-section {
+      max-width: 800px;
       margin: 40px auto;
       padding: 20px;
       background-color: #fdfdfd;
       border-left: 6px solid #f3ae17;
       border-right: 6px solid #69418b;
       border-radius: 10px;
+      box-sizing: border-box;
+      width: 90%;
     }
-
-    .pricing h2 {
+    .content-section h2 {
       color: #69418b;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .package {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
+      font-size: 1.8rem;
       margin-bottom: 20px;
     }
-
-    .package h3 {
-      color: #f3ae17;
+    .step {
+      margin-bottom: 30px;
+    }
+    .step h3 {
+      color: #6a1b9a;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .step ul {
+      padding-left: 30px;
+      margin: 0;
+    }
+    .step ul li {
+      color: #000;
+      line-height: 1.3;
+      margin-bottom: 5px;
+    }
+    .step p {
+      margin-left: 30px;
+      color: #000;
+      line-height: 1.5;
       margin-top: 0;
     }
-
-    .package ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .package ul li::before {
-      content: "✓";
-      color: #69418b;
-      margin-right: 10px;
-    }
-
-    .price {
-      font-size: 1.2em;
-      color: #69418b;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
       background-color: #f9f9f9;
       color: #f3ae17;
-      font-size: 14px;
+      font-size: 0.9rem;
     }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        width: 100%;
-        justify-content: center;
-      }
-
-      nav a {
-        margin: 8px;
-        font-size: 14px;
-      }
-
-      .hero {
-        padding: 40px 15px;
-      }
-
-      .pricing {
-        margin: 20px 15px;
-        padding: 15px;
-      }
-
-      .package {
-        padding: 15px;
-      }
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
     }
-
-    @media (max-width: 480px) {
-      nav a {
-        display: block;
-        margin: 8px 0;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 24px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .price {
-        font-size: 1em;
-      }
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
     }
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background-color: #6a1b9a;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #ffffff;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav a {
-    padding: 10px 0;
-    width: 100%;
-  }
-}
-
+    .social-links a i {
+      margin-right: 8px;
+      font-size: 20px;
+      vertical-align: middle;
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 40px 15px; }
+      .content-section { margin: 20px auto; padding: 15px; }
+      .step h3 { font-size: 1rem; }
+      .step p, .step ul li { font-size: 0.9rem; }
+    }
   </style>
 </head>
 <body>
   <header>
-  <div class="logo">
-    <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
-  </div>
-  <div id="menu-toggle" class="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <nav id="nav-menu">
-    <a href="home.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="services.html">Services</a>
-    <a href="scheduling.html">Scheduling</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-
+    <div class="logo">
+      <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+    </div>
+    <div id="menu-toggle" class="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+    <nav id="nav-menu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html">Services</a>
+      <a href="StepsforOrgaNICESuccess.html">Steps for OrgaNICE Success</a>
+      <a href="pricingandbooking.html">Pricing & Booking</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
   <section class="hero">
-    <h1>Packages & Prices</h1>
-    <p>Choose the perfect package for your space and goals.</p>
+    <h1>Pricing & Booking</h1>
   </section>
+  <section class="content-section">
+    <div class="step">
+      <h3>Rates & Session Structure</h3>
+      <ul>
+        <li><strong>Rate:</strong> $65/hour</li>
+        <li><strong>Session Format:</strong> One session = one service day</li>
+        <li><strong>Minimum Session Length:</strong> 4 hours</li>
+        <li><strong>Maximum Session Length:</strong> 8 hours</li>
+        <li><strong>Booking Options:</strong> Choose from 4-, 6-, or 8-hour sessions via Calendly</li>
+      </ul>
+      <p>Each session is a focused, hands-on experience tailored to your goals. Whether we’re organizing a single space or working across multiple areas, the structure is designed to deliver real, lasting results.</p>
+    </div>
+    <div class="step">
+      <h3>Daily Structure</h3>
+      <ul>
+        <li><strong>One Client Per Session (Day)</strong></li>
+      </ul>
+      <p>I work with only one client per day to ensure your project receives full attention—without rush or interruption.</p>
+      <ul>
+        <li><strong>Standard Start Time:</strong> 10:00 AM</li>
+      </ul>
+      <p>If you need an earlier start, please include that note when booking. I’ll follow up with confirmation if the request can be accommodated.</p>
+      <ul>
+        <li><strong>Availability:</strong> Monday through Friday, 10:00 AM to 6:00 PM</li>
+      </ul>
+      <p><em>*Requests outside these hours may be accommodated on a case-by-case basis—particularly for projects with time-sensitive goals or deadlines that require additional flexibility.</em></p>
+    </div>
+    <div class="step">
+      <h3>Book Your Session</h3>
+      <ul>
+        <li><strong>New Clients:</strong> Book your first session anytime—no Goals Session required.</li>
+      </ul>
+      
+      <p>If you prefer to connect first, you can schedule a <a href="https://calendly.com/organicebyjw/consultation">complimentary 15-minute consultation</a> to talk through your goals, challenges, and the best approach for your space.</p>
+<br>
+<div style="text-align: center;">
+  <a href="https://calendly.com/organicebyjw/consultation" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0px;">
+    Schedule a Goals Session
+  </a>
+<br><br>
+</div>
 
-  <section class="pricing">
-    <h2>Please connect with me to consult about packages & prices.</h2>
+      <ul>
+        <li><strong>Returning Clients:</strong> Welcome back! Visit Calendly to book your next session and include updates in the form.</li>
+      </ul>
+   <div style="text-align: center;">
+  <a href="https://calendly.com/organicebyjw/4-hour-session" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0px;">
+    Book Your Session
+  </a>
+
+    </div>
+    <div class="step">
+      <h3>Cancellation Policy</h3>
+     <ul><li>If something comes up within 48 hours due to unforeseen circumstances, please reach out as soon as possible so we can arrange an alternative appointment time.</ul></li>
+     <ul><li>There is no fee for cancellations made with timely notice. Advance communication helps keep the schedule running smoothly and respectfully for all clients.</ul></li>
+     <ul><li>Thank you for your consideration. I aim to offer flexible scheduling that supports your current needs and life transitions.</ul></li>
+    </div>
+
+     <div class="step" style="text-align: center;">
+  <h3 style="color: #6a1b9a; margin: 0;">Need Help With Booking?</h3>
+  <p style="margin: 0;">
+    <a href="contact.html"><u>Conact me</u></a> and I'll be happy to assist with scheduling you via Calendly.
+  </p>
+</div>
+
+
   </section>
-
   <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a>
+      <a href="https://www.instagram.com/organicebyjw" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-
-  // Optional: close the menu when a nav link is clicked
-  document.querySelectorAll('#nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
     });
-  });
-</script>
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
