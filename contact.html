@@ -11,9 +11,9 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OrgaNICE by JW | Home</title>
+  <title>OrgaNICE by JW | Contact</title>
   <link rel="stylesheet" href="style.css" />
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       background-color: #ffffff;
@@ -63,6 +63,42 @@
       padding: 20px;
     }
 
+    .content-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fdfdfd;
+  border-left: 6px solid #f3ae17;
+  border-right: 6px solid #69418b;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 90%;
+}
+
+.content-section ul {
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.content-section ul li {
+  color: #000000;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.contact select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+
+
     .contact-image {
       text-align: center;
       margin-bottom: 20px;
@@ -72,6 +108,18 @@
       max-width: 100%;
       height: auto;
       border-radius: 10px;
+    }
+
+    .contact-list {
+      padding-left: 30px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .contact-list li {
+      color: #000000;
+      margin-bottom: 0;
+      line-height: 1.2;
     }
 
     .contact form {
@@ -195,26 +243,6 @@
       }
     }
 
-    @media (max-width: 480px) {
-      nav a {
-        display: block;
-        margin: 8px 0;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 24px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .contact button {
-        font-size: 14px;
-      }
-    }
-
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -254,10 +282,8 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
   <header>
     <div class="logo">
       <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
@@ -283,50 +309,87 @@
     <h1>Connect with JW</h1>
   </section>
 
-  <section class="contact">
-    <div class="contact-image">
-      <img src="organice-logo.jpg" alt="Business Card">
-    </div>
-    <h2>Ready to take the next step?</h2>
-    <p>Whether you're planning a move, decluttering for comfort, or helping a loved one transition to a new home, I would be honored to assist.
-      Please reach out via phone, email, or the form below. I offer complimentary phone consultations to understand your needs and determine how I can best support you.
-    </p>
+ <section class="content-section contact">
+  <div class="contact-image" style="text-align: center;">
+    <img src="organice-logo.jpg" alt="Business Card">
+  </div>
 
-    <div class="contact-buttons" style="text-align: center; margin-top: 20px;">
-      <p><a href="tel:9722468115" class="contact-link-button">972-246-8115</a></p>
-      <p><a href="mailto:organicebyjw@gmail.com" class="contact-link-button">organicebyjw@gmail.com</a></p>
-    </div>
-    <p>Service Area: Dallas & Carrollton</p>
+  <h2 style="color: #69418b;">Have a question, idea, or special request?</h2>
 
-    <div class="social-links">
-      <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">
-        <i class="fab fa-facebook-square"></i> Facebook
-      </a>
-      <a href="https://www.instagram.com/organicebyjw" target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-      <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </div>
+  <p style="color: #000000; margin-bottom: 0;">I’d love to hear from you!</p>
+ <p style="color: #000000; margin-top: 0; text-align: left;">Use the form below to get in touch regarding:</p>
+  <ul>
+    <li><strong>General inquiries</strong> not answered on the <a href="faq.html"><u>FAQ</u></a> page</li>
+    <li><strong>Feedback or testimonials</strong> about your experience with OrgaNICE by JW</li>
+    <li><strong>Collaboration and partnership opportunities</strong> (realtors, vendors, movers, etc.)</li>
+    <li><strong>Service or charitable donation requests</strong> for auctions, fundraisers, or community events</li>
+    <li><strong>Special requests</strong> not listed on the website</li>
+    <li><strong>Suggestions</strong> for website improvements, updates, or corrections</li>
+  </ul>
 
-    <form id="contactForm" action="https://formspree.io/f/mqaqnleg" method="POST">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+<p style="color: #000000; margin-top: 0; text-align: center;">I personally review all messages and will respond as soon as possible. Looking forward to connecting with you!</p>
 
-      <label for="phone number">Phone Number</label>
-      <input type="text" id="phone number" name="phone number" required>
+ 
+<form id="contactForm" action="https://formspree.io/f/mqaqnleg" method="POST">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+  <label for="phone number">Phone Number</label>
+  <input type="text" id="phone number" name="phone number" required>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
 
-      <button type="submit">Send Message</button>
-      <div id="status" class="status-message"></div>
-    </form>
-  </section>
+  <!-- Subject Dropdown -->
+  <label for="subject">Subject</label>
+  <select id="subject" name="subject" required>
+    <option value="" disabled selected>Select a subject</option>
+    <option value="General Inquiry">General Inquiry</option>
+    <option value="Feedback/Testimonial">Feedback/Testimonial</option>
+    <option value="Collaboration Opportunity">Collaboration Opportunity</option>
+    <option value="Donation Request">Donation Request</option>
+    <option value="Special Request">Special Request</option>
+    <option value="Website Suggestion">Website Suggestion</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
+
+  <button type="submit">Send Message</button>
+  <div id="status" class="status-message"></div>
+</form>
+<br>
+<h2 style="color: #69418b;">Other Ways To Reach Me</h2>
+
+ <div class="contact-buttons" style="text-align: center; margin-top: 20px;">
+    <p><a href="tel:9722468115" class="contact-link-button">972-246-8115</a></p>
+    <p><a href="mailto:organicebyjw@gmail.com" class="contact-link-button">organicebyjw@gmail.com</a></p>
+  </div>
+
+  <p style="color: #000000; margin-bottom: 0;">Follow me on social media:</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">
+      <i class="fab fa-facebook-square"></i> Facebook
+    </a>
+    <a href="https://www.instagram.com/organicebyjw" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+  </div>
+<br>
+ <div class="step" style="text-align: center;">
+  <h3 style="color: #6a1b9a; margin: 0;">To schedule an organizing session</h3>
+  <p style="margin: 0;">
+   <p style="color: #000000; margin-bottom: 0;">Please visit the <a href="pricingandbooking.html"><u>Pricing & Booking</u></a> page.</p>
+
+  </p>
+</div>
+
+</section>
+
 
   <footer>
     &copy; 2025 OrgaNICE by JW. All rights reserved.
@@ -346,7 +409,6 @@
       });
     });
 
-    // Redirect form on successful submission
     const form = document.getElementById('contactForm');
     const status = document.getElementById('status');
 
