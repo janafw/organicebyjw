@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQ9T87YHX9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZQ9T87YHX9');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OrgaNICE by JW | Home</title>
+  <meta name="description" content="Personalized home and office organizing services to help you declutter, simplify, and create a space that works for you.">
+  <meta name="keywords" content="home organizer, professional organizer, decluttering, organizing services, OrgaNICE by JW, organice">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.organicebyjw.com/" />
+  <link rel="stylesheet" href="style.css" />
+   <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ffffff;
+    }
+
+    .logo img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #6a1b9a;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #f3ae17, #69418b);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* About Section */
+    .about {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      border-left: 6px solid #f3ae17;
+      border-right: 6px solid #69418b;
+      border-radius: 10px;
+    }
+
+    .about h2 {
+      color: #69418b;
+    }
+
+    .about p {
+      line-height: 1.6;
+    }
+
+    /* Photo Marquee */
+    .photo-marquee {
+      overflow: hidden;
+      padding: 20px 0;
+      background-color: #f9f9f9;
+    }
+
+    .photo-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      cursor: grab;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y;
+    }
+
+    .photo-track.dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
+
+    .photo-track img {
+      max-height: 150px;
+      width: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .social-links a i {
+      margin-right: 8px;
+      font-size: 20px;
+      vertical-align: middle;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #f3ae17;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Fixes */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #ffffff;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px 0;
+        font-size: 1rem;
+        width: 100%;
+      }
+
+      .photo-track img {
+        max-height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="nav-menu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html">Services</a>
+      <a href="StepsforOrgaNICESuccess.html">Steps for OrgaNICE Success</a>
+      <a href="pricingandbooking.html">Pricing & Booking</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>OrgaNICE by JW</h1>
+  </section>
+
+  <section class="about">
+    <h2>Mission</h2>
+    <p>As a solo professional organizer, my mission is to help you create calm, functional spaces that support your goals and simplify your life. I bring a personalized, hands-on approach to every project, working one-on-one with care, discretion, and attention to detail. Whether you’re tackling clutter, downsizing, or building better systems, I’m here to guide you with compassion, clarity, and lasting results—so your space finally works for you.</p>
+ <br>
+<div class="step" style="text-align: center;">
+  <h3 style="color: #f3ae17; margin: 0;">Proud to be featured in VoyageDallas—take a look!</h3>
+  <p style="margin: 0; color: #69418b;">
+    Read the article <a href="https://voyagedallas.com/interview/meet-jana-wollam-of-north-dallas/"><u>here.</u></a>  
+  </p>
+</div>
+ </section>
+
+<div class="step" style="text-align: center;">
+  <h3 style="color: #6a1b9a; margin: 0;">Learn More About Jana Wollam From OrgaNICE by JW</h3>
+  <p style="margin: 0; color: #69418b;">
+  On  <a href="about.html"><u>About Me</u></a> page.
+  </p>
+</div>
+
+  <section class="photo-marquee">
+    <div class="photo-track">
+      <img src="before-closet1.jpg" alt="Before Closet">
+      <img src="after-closet1.jpg" alt="After Closet">
+      <img src="before-bathroom1.jpg" alt="Before Bathroom">
+      <img src="after-bathroom1.jpg" alt="After Bathroom">
+      <img src="before-closet2.jpg" alt="Before Closet 2">
+      <img src="after-closet2.jpg" alt="After Closet 2">
+      <img src="before-office.jpg" alt="Before Office">
+      <img src="after-office.jpg" alt="After Office">
+      <img src="before-closet3.jpg" alt="Before Closet 3">
+      <img src="after-closet3.jpg" alt="After Closet 3">
+      <img src="before-closet1.jpg" alt="Before Closet Duplicate">
+      <img src="after-closet1.jpg" alt="After Closet Duplicate">
+      <img src="before-bathroom1.jpg" alt="Before Bathroom Duplicate">
+      <img src="after-bathroom1.jpg" alt="After Bathroom Duplicate">
+      <img src="before-closet2.jpg" alt="Before Closet 2 Duplicate">
+      <img src="after-closet2.jpg" alt="After Closet 2 Duplicate">
+      <img src="before-office.jpg" alt="Before Office Duplicate">
+      <img src="after-office.jpg" alt="After Office Duplicate">
+      <img src="before-closet3.jpg" alt="Before Closet 3 Duplicate">
+      <img src="after-closet3.jpg" alt="After Closet 3 Duplicate">
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">
+        <i class="fab fa-facebook-square"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/organicebyjw" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+    &copy; 2025 OrgaNICE by JW. All rights reserved.
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+
+  <script>
+    const photoTrack = document.querySelector('.photo-track');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    photoTrack.addEventListener('mousedown', (e) => {
+      isDown = true;
+      photoTrack.classList.add('dragging');
+      startX = e.clientX - photoTrack.offsetLeft;
+      scrollLeft = photoTrack.scrollLeft;
+    });
+
+    photoTrack.addEventListener('mouseleave', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
+
+    photoTrack.addEventListener('mouseup', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
+
+    photoTrack.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.clientX - photoTrack.offsetLeft;
+      const walk = (x - startX) * 2;
+      photoTrack.scrollLeft = scrollLeft - walk;
+    });
+
+    photoTrack.addEventListener('touchstart', (e) => {
+      isDown = true;
+      photoTrack.classList.add('dragging');
+      startX = e.touches[0].clientX - photoTrack.offsetLeft;
+      scrollLeft = photoTrack.scrollLeft;
+    });
+
+    photoTrack.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.touches[0].clientX - photoTrack.offsetLeft;
+      const walk = (x - startX) * 2;
+      photoTrack.scrollLeft = scrollLeft - walk;
+    }, { passive: false });
+
+    photoTrack.addEventListener('touchend', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
+
+    photoTrack.addEventListener('touchcancel', () => {
+      isDown = false;
+      photoTrack.classList.remove('dragging');
+    });
+  </script>
+</body>
+</html>
