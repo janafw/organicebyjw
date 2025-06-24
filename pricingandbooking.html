@@ -24,9 +24,47 @@
       flex-wrap: wrap;
     }
 
+    .left-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
     .logo img {
       max-height: 60px;
       width: auto;
+    }
+
+    .contact-link-button {
+      display: inline-block;
+      background-color: #69418b;
+      color: white;
+      padding: 10px 20px;
+      margin: 0 10px 0 0;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .contact-link-button:hover {
+      background-color: #53157a;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      width: auto;
+      margin-top: 0;
+    }
+
+    nav a {
+      margin: 5px 10px;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
     }
 
     .menu-toggle {
@@ -42,22 +80,6 @@
       margin: 4px 0;
       border-radius: 2px;
       transition: 0.3s;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    nav a {
-      margin: 5px 10px;
-      text-decoration: none;
-      color: #6a1b9a;
-      font-weight: bold;
-      font-size: 16px;
     }
 
     .hero {
@@ -162,23 +184,51 @@
         padding: 10px 0;
         width: 100%;
       }
+
+      header {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .left-header {
+        margin-bottom: 10px;
+      }
     }
 
     @media (max-width: 600px) {
-      .hero { padding: 40px 15px; }
-      .content-section { margin: 20px auto; padding: 15px; }
-      .step h3 { font-size: 1rem; }
-      .step p, .step ul li { font-size: 0.9rem; }
+      .hero {
+        padding: 40px 15px;
+      }
+      .content-section {
+        margin: 20px auto;
+        padding: 15px;
+      }
+      .step h3 {
+        font-size: 1rem;
+      }
+      .step p, .step ul li {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+    <div class="left-header">
+      <div class="logo">
+        <a href="home.html">
+          <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo" />
+        </a>
+      </div>
+      <a href="https://calendly.com/organicebyjw" class="contact-link-button">Book</a>
+      <a href="contact.html" class="contact-link-button">Contact</a>
     </div>
+
     <div id="menu-toggle" class="menu-toggle">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
     <nav id="nav-menu">
       <a href="home.html">Home</a>
@@ -229,27 +279,29 @@
         <li><strong>New Clients:</strong> Book your first session anytime—no Goals Session required.</li>
       </ul>
       <p>If you prefer to connect first, you can schedule a <a href="https://calendly.com/organicebyjw/consultation">complimentary 15-minute consultation</a> to talk through your goals, challenges, and the best approach for your space.</p>
-      <br>
+      <br />
       <div style="text-align: center;">
-        <a href="https://calendly.com/organicebyjw/consultation" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0px;">
+        <a href="https://calendly.com/organicebyjw/consultation" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0;">
           Schedule a Goals Session
         </a>
-        <br><br>
+        <br /><br />
       </div>
       <ul>
         <li><strong>Returning Clients:</strong> Welcome back! Visit Calendly to book your next session and include updates in the form.</li>
       </ul>
       <div style="text-align: center;">
-        <a href="https://calendly.com/organicebyjw/4-hour-session" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0px;">
+        <a href="https://calendly.com/organicebyjw/4-hour-session" target="_blank" style="display: inline-block; background-color: #6a1b9a; color: white; padding: 6px 10px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 0;">
           Book Your Session
         </a>
       </div>
     </div>
     <div class="step">
       <h3>Cancellation Policy</h3>
-      <ul><li>If something comes up within 48 hours due to unforeseen circumstances, please reach out as soon as possible so we can arrange an alternative appointment time.</li></ul>
-      <ul><li>There is no fee for cancellations made with timely notice. Advance communication helps keep the schedule running smoothly and respectfully for all clients.</li></ul>
-      <ul><li>Thank you for your consideration. I aim to offer flexible scheduling that supports your current needs and life transitions.</li></ul>
+      <ul>
+        <li>If something comes up within 48 hours due to unforeseen circumstances, please reach out as soon as possible so we can arrange an alternative appointment time.</li>
+        <li>There is no fee for cancellations made with timely notice. Advance communication helps keep the schedule running smoothly and respectfully for all clients.</li>
+        <li>Thank you for your consideration. I aim to offer flexible scheduling that supports your current needs and life transitions.</li>
+      </ul>
     </div>
   </section>
 
