@@ -363,27 +363,29 @@
   const menuToggle = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
 
-  // Toggle the menu when clicking the hamburger icon
+  // Toggle menu on hamburger click
   menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent the document click from firing
+    e.stopPropagation(); // Prevent outside click from firing
     navMenu.classList.toggle('active');
   });
 
-  // Close the menu if clicking outside of nav or hamburger icon
+  // Close menu on outside click
   document.addEventListener('click', (e) => {
-    const isClickInsideMenu = navMenu.contains(e.target);
-    const isClickOnToggle = menuToggle.contains(e.target);
-
-    if (!isClickInsideMenu && !isClickOnToggle) {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
       navMenu.classList.remove('active');
     }
   });
 
-  // Optional: close menu when clicking a nav link
+  // Close menu on nav link click
   document.querySelectorAll('#nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('active');
     });
+  });
+
+  // Close menu on scroll
+  window.addEventListener('scroll', () => {
+    navMenu.classList.remove('active');
   });
 </script>
 </body>
