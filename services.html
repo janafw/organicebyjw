@@ -71,6 +71,28 @@
       margin-top: 10px;
     }
 
+  .contact-link-button {
+      display: inline-block;
+      background-color: #69418b;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-link-button:hover {
+      background-color: #53157a;
+    }
+.left-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
     .services {
       max-width: 900px;
       margin: 40px auto;
@@ -212,10 +234,19 @@
   </style>
 </head>
 <body>
-<header>
+ <header>
+  <div class="left-header">
   <div class="logo">
+  <a href="home.html">
     <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+    </a>
   </div>
+
+        
+<a href="https://calendly.com/organicebyjw" class="contact-link-button">Book<a/>
+ <a href="contact.html" class="contact-link-button">Contact</a>
+
+</div>
   <div id="menu-toggle" class="menu-toggle">
     <span></span>
     <span></span>
