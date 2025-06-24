@@ -230,28 +230,23 @@
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-
   nav {
+    position: absolute;     /* Take it out of normal flow */
+    top: 60px;              /* Just below header (adjust if header height changes) */
+    left: 0;                /* Align left edge of viewport */
+    right: 0;               /* Stretch to right edge */
+    background-color: #ffffff;
+    padding: 10px 20px;
     display: none;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #ffffff;
+    box-sizing: border-box; /* Include padding in width calculation */
+    z-index: 9999;          /* Ensure it’s above other content */
   }
 
   nav.active {
     display: flex;
   }
-
-  nav a {
-    padding: 10px 0;
-    width: 100%;
-  }
-
 }
 
   </style>
