@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OrgaNICE by JW | FAQ</title>
   <link rel="stylesheet" href="style.css"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
   <style>
     body {
       background-color: #ffffff;
@@ -28,7 +28,44 @@
       align-items: center;
       padding: 10px 20px;
       background-color: #ffffff;
-      
+      flex-wrap: nowrap; /* prevent wrapping */
+    }
+    .left-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: nowrap; /* no wrap */
+      flex-shrink: 1;
+      min-width: 0; /* prevent overflow */
+    }
+    .logo img {
+      display: block;
+      max-height: 50px;
+      max-width: 150px;
+      width: auto;
+      height: auto;
+      flex-shrink: 1;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0; /* prevent buttons from shrinking */
+    }
+    .contact-link-button {
+      display: inline-flex;
+      white-space: nowrap;
+      margin: 0;
+      background-color: #69418b;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .contact-link-button:hover {
+      background-color: #53157a;
     }
     nav {
       display: flex;
@@ -37,12 +74,12 @@
       width: 100%; /* full width nav on small devices */
       margin-top: 10px;
     }
-   nav a {
+    nav a {
       margin: 5px 10px;
       text-decoration: none;
       color: #6a1b9a;
       font-weight: bold;
-      font-size: 16px;;
+      font-size: 16px;
     }
     .hero {
       background: linear-gradient(to right, #f3ae17, #69418b);
@@ -59,7 +96,7 @@
       border-right: 6px solid #69418b;
       border-radius: 10px;
       box-sizing: border-box;
-      width: 90%; /* adapt width on small screens */
+      width: 90%;
     }
     .faq-section h2 {
       color: #69418b;
@@ -81,11 +118,10 @@
       color: #69418b;
       font-size: 1rem;
     }
-.social-links {
+    .social-links {
       text-align: center;
       margin-top: 20px;
     }
-
     .social-links a {
       margin: 0 10px;
       text-decoration: none;
@@ -93,26 +129,23 @@
       font-weight: bold;
       font-size: 16px;
     }
-
     .social-links a i {
       margin-right: 8px;
       font-size: 20px;
       vertical-align: middle;
     }
-.social-icons {
-  margin-top: 15px;
-}
-
-.social-icons a {
-  margin: 0 10px;
-  color: #69418b;
-  font-size: 20px;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #f3ae17;
-}
+    .social-icons {
+      margin-top: 15px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: #69418b;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #f3ae17;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -120,7 +153,6 @@
       color: #f3ae17;
       font-size: 0.9rem;
     }
-
     /* Responsive tweaks */
     @media (max-width: 600px) {
       header {
@@ -157,62 +189,63 @@
         padding: 15px;
       }
     }
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background-color: #6a1b9a;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-/* Responsive Design */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #6a1b9a;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    /* Responsive Design */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
       }
-
       nav {
         width: 100%;
-        justify-content: ;
+        justify-content: flex-start;
         flex-wrap: wrap;
       }
-
       nav a {
         margin: 10px;
         font-size: 14px;
       }
-/* Hide nav by default on mobile */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-}
-
+      /* Hide nav by default on mobile */
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
 <header>
-  <div class="logo">
-    <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo">
+  <div class="left-header">
+    <div class="logo">
+      <a href="home.html">
+        <img src="organice-logo.jpg" alt="OrgaNICE by JW Logo" />
+      </a>
+    </div>
+    <div class="button-group">
+      <a href="https://calendly.com/organicebyjw" class="contact-link-button">Book</a>
+      <a href="contact.html" class="contact-link-button">Contact</a>
+    </div>
   </div>
+
   <div id="menu-toggle" class="menu-toggle">
     <span></span>
     <span></span>
@@ -230,107 +263,102 @@
   </nav>
 </header>
 
+<section class="hero">
+  <h1>Frequently Asked Questions</h1>
+</section>
 
-  <section class="hero">
-    <h1>Frequently Asked Questions</h1>
-   
-  </section>
+<section class="faq-section">
+  <h2>FAQ</h2>
 
-  <section class="faq-section">
-    <h2>FAQ</h2>
+  <div class="faq-item">
+    <div class="faq-question">Q: What does a professional organizer do?</div>
+    <div class="faq-answer">A: I help you sort, declutter, and set up personalized systems so your home functions better and feels calmer. I tailor every project to your space, needs, and comfort level.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question">Q: What does a professional organizer do?</div>
-      <div class="faq-answer">A: I help you sort, declutter, and set up personalized systems so your home functions better and feels calmer. I tailor every project to your space, needs, and comfort level.</div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-question">Q: What makes your organizing approach different?</div>
+    <div class="faq-answer">A: I work one-on-one with clients and specialize in serving seniors with patience, discretion, and empathy. I take the time to listen, understand your goals, and work at your pace without pressure.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question">Q: What makes your organizing approach different?</div>
-      <div class="faq-answer">A: I work one-on-one with clients and specialize in serving seniors with patience, discretion, and empathy. I take the time to listen, understand your goals, and work at your pace without pressure.</div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-question">Q: What areas do you serve?</div>
+    <div class="faq-answer">A: I currently offer in-person services within the area of Dallas, TX: Far North Dallas, Addison, Richardson, Plano, Frisco, Carrollton, Farmers Branch, Irving, Lake Highlands, Lakewood, Garland, and Denton. If you're unsure whether your location is within the service range, feel free to reach out via the Contact Page.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question">Q: What areas do you serve?</div>
-      <div class="faq-answer">A: I currently offer in-person services within the area of Dallas, TX: Far North Dallas, Addison, Richardson, Plano, Frisco, Carrollton, Farmers Branch, Irving, Lake Highlands, Lakewood, Garland, and      	Denton. If you're unsure whether your location is within the service range, feel free to reach out via the Contact Page.</div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-question">Q: Why is there a 4-hour minimum required when booking a session?</div>
+    <div class="faq-answer">A: A 4-hour minimum ensures that each session provides enough time to make meaningful progress and deliver tangible results. Organizing projects often require focused attention and uninterrupted time to achieve effective and lasting outcomes, which shorter sessions may not fully support.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question">Q: Why is there a 4-hour minimum required when booking a session? 
-     </div>
-      <div class="faq-answer">A: A 4-hour minimum ensures that each session provides enough time to make meaningful progress and deliver tangible results. Organizing projects often require focused attention and uninterrupted time to achieve effective and lasting outcomes, which shorter sessions may not fully support.</div>
-    </div>
-   
-    <div class="faq-item">
-      <div class="faq-question">Q: What if my project takes less than the 4-hour minimum? 
-</div>
-      <div class="faq-answer">A: No problem. If your session concludes early, I can continue working independently—whether that means assisting with smaller tasks, organizing another area, or preparing your space for the next steps. This ensures you receive full value from your session, even if your energy is low or your main project finishes sooner than expected. </div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-question">Q: What if my project takes less than the 4-hour minimum?</div>
+    <div class="faq-answer">A: No problem. If your session concludes early, I can continue working independently—whether that means assisting with smaller tasks, organizing another area, or preparing your space for the next steps. This ensures you receive full value from your session, even if your energy is low or your main project finishes sooner than expected.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question">Q: What happens if my project takes longer than 4 hours? 
-</div>
-      <div class="faq-answer">A: Around hour 3 of your session, we’ll pause to review progress and discuss whether you'd like to continue. Sessions can be extended—up to 8 hours total—based on your comfort and needs.
+  <div class="faq-item">
+    <div class="faq-question">Q: What happens if my project takes longer than 4 hours?</div>
+    <div class="faq-answer">A: Around hour 3 of your session, we’ll pause to review progress and discuss whether you'd like to continue. Sessions can be extended—up to 8 hours total—based on your comfort and needs.
       <br><br>	
-       Since I book only one client per day, your session is never rushed. This flexibility ensures you receive my full attention and support for as long as your project requires (within the 8-hour maximum). You’ll always have the final say on how we proceed. </div>
+      Since I book only one client per day, your session is never rushed. This flexibility ensures you receive my full attention and support for as long as your project requires (within the 8-hour maximum). You’ll always have the final say on how we proceed.
     </div>
- 
-    <div class="faq-item">
-      <div class="faq-question">Q: Do I need to buy containers or supplies?</div>
-      <div class="faq-answer">A: Not at all. I focus on using what you already have whenever possible. If extra organizing tools are needed, I can recommend cost-effective, accommodation-friendly options.</div>
-    </div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question">Q: Do I have to get rid of things?</div>
-      <div class="faq-answer">A: No-your stuff, your rules. I'll guide you through the decision-making process without pressure or judgment.</div>
-    </div>
+  <div class="faq-item">
+    <div class="faq-question">Q: Do I need to buy containers or supplies?</div>
+    <div class="faq-answer">A: Not at all. I focus on using what you already have whenever possible. If extra organizing tools are needed, I can recommend cost-effective, accommodation-friendly options.</div>
+  </div>
 
-    <div class="faq-item">
-      <div class="faq-question">Q: l'm neurodivergent-will you accommodate my needs?</div>
-      <div class="faq-answer">A: Absolutely. I tailor sessions to your pace, communication style, and sensory preferences.</div>
-    </div>
-    
-     <div class="faq-item">
-      <div class="faq-question">Q: Why should I invest in a professional organizer? </div>
-      <div class="faq-answer">A: Investing in a professional organizer is an investment in your time, energy, and peace of mind. It’s not just about making your space look nice—it’s about creating systems that work for your life. 
-<br><br>
-<strong>Here’s what you gain:</strong>
-<br><br>
-<strong>Less stress:</strong> Clear, functional spaces help reduce daily overwhelm. 
-<p>
-<strong>More time:</strong> Stop wasting time searching for things or cleaning around clutter. 
-<p>
-<strong>Better habits:</strong> Learn practical systems you can maintain long after our session. 
-<p>
-<strong>Support:</strong> Get judgment-free help during emotional decisions like downsizing or decluttering. 
-<p>
-<strong>Peace of mind:</strong> Enjoy a home that works for you—not against you. </div>
-  
+  <div class="faq-item">
+    <div class="faq-question">Q: Do I have to get rid of things?</div>
+    <div class="faq-answer">A: No-your stuff, your rules. I'll guide you through the decision-making process without pressure or judgment.</div>
+  </div>
 
+  <div class="faq-item">
+    <div class="faq-question">Q: I'm neurodivergent-will you accommodate my needs?</div>
+    <div class="faq-answer">A: Absolutely. I tailor sessions to your pace, communication style, and sensory preferences.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Q: Why should I invest in a professional organizer?</div>
+    <div class="faq-answer">A: Investing in a professional organizer is an investment in your time, energy, and peace of mind. It’s not just about making your space look nice—it’s about creating systems that work for your life.
+      <br><br>
+      <strong>Here’s what you gain:</strong>
+      <br><br>
+      <strong>Less stress:</strong> Clear, functional spaces help reduce daily overwhelm.
+      <p>
+      <strong>More time:</strong> Stop wasting time searching for things or cleaning around clutter.
+      <p>
+      <strong>Better habits:</strong> Learn practical systems you can maintain long after our session.
+      <p>
+      <strong>Support:</strong> Get judgment-free help during emotional decisions like downsizing or decluttering.
+      <p>
+      <strong>Peace of mind:</strong> Enjoy a home that works for you—not against you.
+    </div>
 </section>
 
 <div class="step" style="text-align: center;">
   <h3 style="color: #6a1b9a; margin: 0;">Have Questions?</h3>
   <p style="margin: 0; color: #69418b;">
-  Feel free to reach out via the <a href="contact.html"><u>Contact</u></a> Page for general inquiries, special requests, or anything not covered here.
+    Feel free to reach out via the <a href="contact.html"><u>Contact</u></a> Page for general inquiries, special requests, or anything not covered here.
   </p>
 </div>
 
+<footer>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">
+      <i class="fab fa-facebook-square"></i> Facebook
+    </a>
+    <a href="https://www.instagram.com/organicebyjw" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+  </div>
 
-  <footer>
-<div class="social-links">
-      <a href="https://www.facebook.com/profile.php?id=61553322496688" target="_blank">
-        <i class="fab fa-facebook-square"></i> Facebook
-      </a>
-      <a href="https://www.instagram.com/organicebyjw" target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-      <a href="https://www.linkedin.com/in/jana-w1234/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </div>
+  &copy; 2025 OrgaNICE by JW. All rights reserved.
+</footer>
 
-    &copy; 2025 OrgaNICE by JW. All rights reserved.
-  </footer>
 <script>
   const menuToggle = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
