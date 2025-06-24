@@ -319,18 +319,34 @@
   </footer>
 
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
+  // Toggle menu on hamburger click
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent outside click from firing
+    navMenu.classList.toggle('active');
+  });
 
-    document.querySelectorAll('#nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-      });
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      navMenu.classList.remove('active');
+    }
+  });
+
+  // Close menu on nav link click
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
     });
-  </script>
+  });
+
+  // Close menu on scroll
+  window.addEventListener('scroll', () => {
+    navMenu.classList.remove('active');
+  });
+</script>
+
 </body>
 </html>
