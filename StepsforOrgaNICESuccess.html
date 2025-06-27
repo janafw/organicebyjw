@@ -287,8 +287,7 @@
     </ul>
 <div style="text-align: center;"> 
 <a href="https://calendly.com/organicebyjw/4-hour-session" 
-   class="contact-link-button" 
-   id="book-session-button">Book Your Session</a>
+   class="contact-link-button">Book Your Session</a>
 
   </div>
 
@@ -368,14 +367,20 @@
 </script>
 
 <script>
-  document.getElementById("book-session-button").addEventListener("click", function() {
-    gtag('event', 'book_session_click', {
-      'event_category': 'engagement',
-      'event_label': 'Book Your Session Button',
-      'value': 1
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    const bookBtn = document.getElementById("book-button");
+    if (bookBtn) {
+      bookBtn.addEventListener("click", function () {
+        gtag('event', 'book_click', {
+          'event_category': 'engagement',
+          'event_label': 'Top Book Button',
+          'value': 1
+        });
+      });
+    }
   });
 </script>
+
 
 
 </body>
