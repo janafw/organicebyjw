@@ -241,7 +241,8 @@
       </a>
     </div>
     <div class="button-group">
-      <a href="https://calendly.com/organicebyjw" class="contact-link-button">Book</a>
+      <a href="https://calendly.com/organicebyjw" class="contact-link-button" id="book-button">Book</a>
+
       <a href="contact.html" class="contact-link-button">Contact</a>
     </div>
   </div>
@@ -388,5 +389,21 @@
     navMenu.classList.remove('active');
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const bookBtn = document.getElementById("book-button");
+    if (bookBtn) {
+      bookBtn.addEventListener("click", function () {
+        gtag('event', 'book_click', {
+          'event_category': 'engagement',
+          'event_label': 'Top Book Button',
+          'value': 1
+        });
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
