@@ -286,7 +286,10 @@
       <li>For larger or ongoing projects, we’ll plan your schedule together during the consultation or after your first session.</li>
     </ul>
 <div style="text-align: center;"> 
-<a href="https://calendly.com/organicebyjw/4-hour-session" class="contact-link-button">Book Your Session</a>
+<a href="https://calendly.com/organicebyjw/4-hour-session" 
+   class="contact-link-button" 
+   id="book-session-button">Book Your Session</a>
+
   </div>
 
   <div class="step">
@@ -363,6 +366,17 @@
     navMenu.classList.remove('active');
   });
 </script>
+
+<script>
+  document.getElementById("book-session-button").addEventListener("click", function() {
+    gtag('event', 'book_session_click', {
+      'event_category': 'engagement',
+      'event_label': 'Book Your Session Button',
+      'value': 1
+    });
+  });
+</script>
+
 
 </body>
 </html>
