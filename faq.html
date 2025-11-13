@@ -75,12 +75,35 @@
       margin-top: 10px;
     }
     nav a {
-      margin: 5px 10px;
-      text-decoration: none;
-      color: #6a1b9a;
-      font-weight: bold;
-      font-size: 16px;
-    }
+  position: relative;
+  text-decoration: none;
+  color: #6a1b9a;
+  font-weight: bold;
+  font-size: 1rem;
+  overflow: hidden;
+  display: inline-block;
+  padding: 2px 0;
+  transition: color 0.3s ease;
+}
+
+/* gold color "wipe" from left to right */
+nav a::after {
+  content: attr(data-text); /* duplicate the text */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  color: #f3ae17;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: width 0.35s ease;
+}
+
+/* animate the reveal */
+nav a:hover::after {
+  width: 100%;
+}
+
     .hero {
       background: linear-gradient(to right, #f3ae17, #69418b);
       color: white;
@@ -253,14 +276,15 @@
     <span></span>
   </div>
   <nav id="nav-menu">
-    <a href="home.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="services.html">Services</a>
-    <a href="StepsforOrgaNICESuccess.html">Steps for OrgaNICE Success</a>
-    <a href="pricingandbooking.html">Pricing & Booking</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-    <a href="faq.html">FAQ</a>
+   <a href="home.html" data-text="Home">Home</a>
+    <a href="about.html" data-text="About Me">About Me</a>
+    <a href="services.html" data-text="Services">Services</a>
+    <a href="StepsforOrgaNICESuccess.html" data-text="Steps for OrgaNICE Success">Steps for OrgaNICE Success</a>
+    <a href="pricingandbooking.html" data-text="Pricing & Booking">Pricing & Booking</a>
+    <a href="gallery.html" data-text="Gallery">Gallery</a>
+    <a href="contact.html" data-text="Contact">Contact</a>
+    <a href="faq.html" data-text="FAQ">FAQ</a>
+
   </nav>
 </header>
 
