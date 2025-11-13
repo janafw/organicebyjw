@@ -79,12 +79,36 @@
       margin-top: 10px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #6a1b9a;
-      font-weight: bold;
-      font-size: 1rem;
-    }
+     nav a {
+  position: relative;
+  text-decoration: none;
+  color: #6a1b9a;
+  font-weight: bold;
+  font-size: 1rem;
+  overflow: hidden;
+  display: inline-block;
+  padding: 2px 0;
+  transition: color 0.3s ease;
+}
+
+/* gold color "wipe" from left to right */
+nav a::after {
+  content: attr(data-text); /* duplicate the text */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  color: #f3ae17;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: width 0.35s ease;
+}
+
+/* animate the reveal */
+nav a:hover::after {
+  width: 100%;
+}
+
 
     /* Hero Section */
     .hero {
@@ -137,6 +161,81 @@
     .about p {
       line-height: 1.6;
     }
+
+.testimonials-container {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  background-color: #ffffff;
+  border-left: 6px solid #f3ae17; /* Gold */
+  border-right: 6px solid #69418b; /* Purple */
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  min-height: 180px;
+}
+
+.testimonial {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.testimonial.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.testimonial p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.testimonial h4 {
+  margin-top: 12px;
+  color: #69418b;
+  font-weight: bold;
+}
+
+.testimonials-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #69418b;
+  border: none;
+  color: #ffffff;
+  font-size: 26px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.testimonials-container button:hover {
+  background: #53157a;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.testimonials-section h2 {
+  text-align: center;
+  color: #69418b;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
 
     /* Photo Marquee */
     .photo-marquee {
@@ -255,14 +354,15 @@
     </div>
 
     <nav id="nav-menu">
-      <a href="home.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="services.html">Services</a>
-      <a href="StepsforOrgaNICESuccess.html">Steps for OrgaNICE Success</a>
-      <a href="pricingandbooking.html">Pricing & Booking</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="faq.html">FAQ</a>
+      <a href="home.html" data-text="Home">Home</a>
+    <a href="about.html" data-text="About Me">About Me</a>
+    <a href="services.html" data-text="Services">Services</a>
+    <a href="StepsforOrgaNICESuccess.html" data-text="Steps for OrgaNICE Success">Steps for OrgaNICE Success</a>
+    <a href="pricingandbooking.html" data-text="Pricing & Booking">Pricing & Booking</a>
+    <a href="gallery.html" data-text="Gallery">Gallery</a>
+    <a href="contact.html" data-text="Contact">Contact</a>
+    <a href="faq.html" data-text="FAQ">FAQ</a>
+
     </nav>
   </header>
 
@@ -287,9 +387,42 @@
      The best compliment you can give is sharing OrgaNICE by JW with a friend or family member who could use a little more peace and order in their home. Your referrals mean the world to me — thank you for helping my small business grow through word of mouth!
      </p>
      </div>
+</section>
 
+<section class="testimonials-section">
+<h2>Testimonials</h2>
+ <div class="testimonials-container">
+    <div class="testimonial active">
+ <p>“Jana has such a calming and reassuring presence. She didn’t just organize my space, she helped me see new ways to manage my day-to-day routines without feeling overwhelmed. Her attention to detail and thoughtful approach made a huge difference, and I truly feel more peaceful in my home now.”</p>  <h4>  - D.S.</h4>
+
+</div>
+
+
+<div class="testimonial">
+<p> “I cannot thank you enough for the great job you did today! I just went into my closet and looked around and marveled because I have never had my things so orderly! You know that your clients are helped in so many ways that have nothing to do with "things".
+It's a kind of "therapy" for the soul! You have the power, the magic that is very powerful!
+LOL I really mean it! Thanks again."</p> <h4> - J.M.</h4>
+
+</div>
+
+
+<div class="testimonial">
+<p>“Jana helped me out tremendously with organizing my studio space! It is a shared space and she really made sure that everything was systematic! I can honestly say that the systems we put in place are still holding strong 6 months later. There are a ton of people who come thru the studio weekly and it has stayed so functional! We organized everything based on use of tools and levels of importance. Jana was patient and flexible.
+Speaking of patience...she came in and helped my mom with her space. A priceless gift. Jana was empathetic and patient with my mom.
+Making sure that she felt comfortable with all decisions and had chats about what can stay or go. We can all use a special person to help with our family's spaces!!” </p> <h4> - J.T. </h4>
+
+</div>
+
+<div class="testimonial">
+ <p> "Working with Jana was such a positive experience. She listens carefully, respects your space, and offers solutions that actually fit your lifestyle. It’s clear she genuinely cares about helping people, not just tidying up rooms. I was amazed by how much lighter and more manageable my home felt after our sessions.” </p> <h4> - D.F. </h4>
   
+</div>
+
+<button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
   </section>
+<br>
 
   <div class="step" style="text-align: center;">
     <h3 style="color: #6a1b9a; margin: 0;">Learn More About Jana Wollam From OrgaNICE by JW</h3>
@@ -337,6 +470,23 @@
     </div>
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
+
+  <script>
+const testimonials = document.querySelectorAll('.testimonial');
+let current = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  testimonials[current].classList.remove('active');
+  current = (current + 1) % testimonials.length;
+  testimonials[current].classList.add('active');
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  testimonials[current].classList.remove('active');
+  current = (current - 1 + testimonials.length) % testimonials.length;
+  testimonials[current].classList.add('active');
+});
+</script>
 
   <script>
   const menuToggle = document.getElementById('menu-toggle');
