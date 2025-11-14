@@ -239,6 +239,49 @@ nav a:hover::after {
       gap: 15px;
     }
 
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: 12px 20px;
+  background-color: #f3ae17; /* gold */
+  color: #6a1b9a; /* deep purple text */
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  display: none; /* hidden until scroll */
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop .arrow {
+  font-size: 18px;
+}
+
+#backToTop.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#backToTop.hide {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+#backToTop:hover {
+  background-color: #53157a; /* darker purple hover */
+  color: #ffd46a; /* softer gold hover */
+}
+
+#backToTop.show {
+  display: flex !important;
+}
   </style>
 </head>
 <body>
@@ -371,6 +414,53 @@ nav a:hover::after {
     </div>
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
+
+<button id="backToTop">
+  <span class="arrow">▲</span> Back to Top
+</button>
+ <script>
+const testimonials = document.querySelectorAll('.testimonial');
+let current = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  testimonials[current].classList.remove('active');
+  current = (current + 1) % testimonials.length;
+  testimonials[current].classList.add('active');
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  testimonials[current].classList.remove('active');
+  current = (current - 1 + testimonials.length) % testimonials.length;
+  testimonials[current].classList.add('active');
+});
+</script>
+
+<script>
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const halfway = scrollable / 2;
+
+  if (window.scrollY > halfway) {
+    backToTopBtn.classList.add("show");
+    backToTopBtn.classList.remove("hide");
+  } else {
+    backToTopBtn.classList.add("hide");
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+</script>
+
+<script>
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
 
   <script>
   const menuToggle = document.getElementById('menu-toggle');
