@@ -476,140 +476,64 @@ nav a:hover::after {
 <button id="backToTop">
   <span class="arrow">▲</span> Back to Top
 </button>
- <script>
-const testimonials = document.querySelectorAll('.testimonial');
-let current = 0;
-
-document.querySelector('.next').addEventListener('click', () => {
-  testimonials[current].classList.remove('active');
-  current = (current + 1) % testimonials.length;
-  testimonials[current].classList.add('active');
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-  testimonials[current].classList.remove('active');
-  current = (current - 1 + testimonials.length) % testimonials.length;
-  testimonials[current].classList.add('active');
-});
-</script>
-
-<script>
-const backToTopBtn = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const halfway = scrollable / 2;
-
-  if (window.scrollY > halfway) {
-    backToTopBtn.classList.add("show");
-    backToTopBtn.classList.remove("hide");
-  } else {
-    backToTopBtn.classList.add("hide");
-    backToTopBtn.classList.remove("show");
-  }
-});
-
-</script>
-
-<script>
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-</script>
+ 
   <script>
-    const images = document.querySelectorAll('.gallery img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    const closeBtn = document.getElementById('closeBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let currentIndex = 0;
+  const images = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = document.getElementById('closeBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let currentIndex = 0;
 
-    function openLightbox(index) {
-      currentIndex = index;
-      lightboxImg.src = images[currentIndex].src;
-      lightboxImg.alt = images[currentIndex].alt;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
-    function showPrev() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      lightboxImg.src = images[currentIndex].src;
-      lightboxImg.alt = images[currentIndex].alt;
-    }
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+  }
 
-    function showNext() {
-      currentIndex = (currentIndex + 1) % images.length;
-      lightboxImg.src = images[currentIndex].src;
-      lightboxImg.alt = images[currentIndex].alt;
-    }
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+  }
 
-    images.forEach((img, index) => {
-      img.addEventListener('click', () => openLightbox(index));
-    });
-
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', showPrev);
-    nextBtn.addEventListener('click', showNext);
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'Escape') closeLightbox();
-    });
-
-  const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-
-  menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent outside click from firing
-    navMenu.classList.toggle('active');
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
   });
 
-document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-      navMenu.classList.remove('active');
-    }
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
   });
 
- document.querySelectorAll('#nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-    });
-  });
-window.addEventListener('scroll', () => {
-    navMenu.classList.remove('active');
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'Escape') closeLightbox();
   });
 </script>
-  
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const bookBtn = document.getElementById("book-button");
-    if (bookBtn) {
-      bookBtn.addEventListener("click", function () {
-        gtag('event', 'book_click', {
-          'event_category': 'engagement',
-          'event_label': 'Top Book Button',
-          'value': 1
-        });
-      });
-    }
-  });
-</script>
+
+<script src="js/main.js"></script>
+
 
 </body>
 </html>

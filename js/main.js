@@ -32,16 +32,53 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Testimonial carousel
+  const testimonials = document.querySelectorAll(".testimonial");
+  const prevTestimonial = document.querySelector(".prev");
+  const nextTestimonial = document.querySelector(".next");
+
+  if (
+    testimonials.length > 0 &&
+    prevTestimonial &&
+    nextTestimonial
+  ) {
+    let currentTestimonial = 0;
+
+    const showTestimonial = (index) => {
+      testimonials.forEach((testimonial, testimonialIndex) => {
+        testimonial.classList.toggle(
+          "active",
+          testimonialIndex === index
+        );
+      });
+    };
+
+    nextTestimonial.addEventListener("click", () => {
+      currentTestimonial =
+        (currentTestimonial + 1) % testimonials.length;
+
+      showTestimonial(currentTestimonial);
+    });
+
+    prevTestimonial.addEventListener("click", () => {
+      currentTestimonial =
+        (currentTestimonial - 1 + testimonials.length) %
+        testimonials.length;
+
+      showTestimonial(currentTestimonial);
+    });
+  }
+
   // Back-to-top button
   const backToTopBtn = document.getElementById("backToTop");
 
   if (backToTopBtn) {
     const updateBackToTop = () => {
-  const scrollable =
-    document.documentElement.scrollHeight - window.innerHeight;
-  const halfway = scrollable / 2;
+      const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const halfway = scrollable / 2;
 
-  if (window.scrollY > halfway) {
+      if (window.scrollY > halfway) {
         backToTopBtn.classList.add("show");
         backToTopBtn.classList.remove("hide");
       } else {

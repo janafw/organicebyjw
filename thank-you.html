@@ -242,35 +242,7 @@
     &copy; 2025 OrgaNICE by JW. All rights reserved.
   </footer>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('#nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-      });
-    });
-  </script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const bookBtn = document.getElementById("book-button");
-    if (bookBtn) {
-      bookBtn.addEventListener("click", function () {
-        gtag('event', 'book_click', {
-          'event_category': 'engagement',
-          'event_label': 'Top Book Button',
-          'value': 1
-        });
-      });
-    }
-  });
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

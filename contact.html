@@ -495,120 +495,42 @@ nav a:hover::after {
 <button id="backToTop">
   <span class="arrow">▲</span> Back to Top
 </button>
- <script>
-const testimonials = document.querySelectorAll('.testimonial');
-let current = 0;
-
-document.querySelector('.next').addEventListener('click', () => {
-  testimonials[current].classList.remove('active');
-  current = (current + 1) % testimonials.length;
-  testimonials[current].classList.add('active');
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-  testimonials[current].classList.remove('active');
-  current = (current - 1 + testimonials.length) % testimonials.length;
-  testimonials[current].classList.add('active');
-});
-</script>
-
-<script>
-const backToTopBtn = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const halfway = scrollable / 2;
-
-  if (window.scrollY > halfway) {
-    backToTopBtn.classList.add("show");
-    backToTopBtn.classList.remove("hide");
-  } else {
-    backToTopBtn.classList.add("hide");
-    backToTopBtn.classList.remove("show");
-  }
-});
-
-</script>
-
-<script>
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-</script>
 
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('status');
 
-    menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent outside click from firing
-    navMenu.classList.toggle('active');
-  });
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-      navMenu.classList.remove('active');
-    }
-  });
+    const formData = new FormData(form);
 
-     document.querySelectorAll('#nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-    });
-  });
-
- window.addEventListener('scroll', () => {
-    navMenu.classList.remove('active');
-  });
-
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('status');
-
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-          window.location.href = "thank-you.html";
-        } else {
-          status.textContent = "Oops! Something went wrong. Please try again.";
-          status.className = "status-message status-error";
-          status.style.display = "block";
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
         }
-      } catch (error) {
-        status.textContent = "There was a problem submitting the form. Please try again later.";
+      });
+
+      if (response.ok) {
+        window.location.href = "thank-you.html";
+      } else {
+        status.textContent = "Oops! Something went wrong. Please try again.";
         status.className = "status-message status-error";
         status.style.display = "block";
       }
-    });
-  </script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const bookBtn = document.getElementById("book-button");
-    if (bookBtn) {
-      bookBtn.addEventListener("click", function () {
-        gtag('event', 'book_click', {
-          'event_category': 'engagement',
-          'event_label': 'Top Book Button',
-          'value': 1
-        });
-      });
+    } catch (error) {
+      status.textContent = "There was a problem submitting the form. Please try again later.";
+      status.className = "status-message status-error";
+      status.style.display = "block";
     }
   });
 </script>
+
+<script src="js/main.js"></script>
+
 
 </body>
 </html>
