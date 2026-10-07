@@ -16,14 +16,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
 
   <style>
-    body {
-      background-color: #ffffff;
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
+header {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -38,39 +31,7 @@
       width: 100%;
       margin-top: 10px;
     }
-
-   nav a {
-  position: relative;
-  text-decoration: none;
-  color: #6a1b9a;
-  font-weight: bold;
-  font-size: 1rem;
-  overflow: hidden;
-  display: inline-block;
-  padding: 2px 0;
-  transition: color 0.3s ease;
-}
-
-/* gold color "wipe" from left to right */
-nav a::after {
-  content: attr(data-text); /* duplicate the text */
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0%;
-  color: #f3ae17;
-  white-space: nowrap;
-  overflow: hidden;
-  transition: width 0.35s ease;
-}
-
-/* animate the reveal */
-nav a:hover::after {
-  width: 100%;
-}
-
-
-    .hero {
+.hero {
       background: linear-gradient(to right, #f3ae17, #69418b);
       color: white;
       text-align: center;
@@ -177,23 +138,7 @@ nav a:hover::after {
         font-size: 0.9rem;
       }
     }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background-color: #6a1b9a;
-      margin: 4px 0;
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
@@ -238,51 +183,7 @@ nav a:hover::after {
       align-items: center;
       gap: 15px;
     }
-
-#backToTop {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  padding: 12px 20px;
-  background-color: #f3ae17; /* gold */
-  color: #6a1b9a; /* deep purple text */
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  display: none; /* hidden until scroll */
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-#backToTop .arrow {
-  font-size: 18px;
-}
-
-#backToTop.show {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#backToTop.hide {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-
-#backToTop:hover {
-  background-color: #53157a; /* darker purple hover */
-  color: #ffd46a; /* softer gold hover */
-}
-
-#backToTop.show {
-  display: flex !important;
-}
-  </style>
+</style>
 </head>
 <body>
   <header>
