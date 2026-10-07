@@ -194,6 +194,47 @@ nav a:hover::after {
   font-size: 1rem;
 }
 
+/* Shared Link Buttons */
+.contact-link-button {
+  display: inline-block;
+  background-color: #69418b;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-link-button:hover {
+  background-color: #53157a;
+}
+
+/* Shared Content Sections */
+.content-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fdfdfd;
+  border-left: 6px solid #f3ae17;
+  border-right: 6px solid #69418b;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 90%;
+}
+
+.step {
+  margin-bottom: 30px;
+}
+
+.step h3 {
+  color: #f3ae17;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
 .contact button {
   padding: 0.75rem;
   border: none;
@@ -209,13 +250,22 @@ nav a:hover::after {
 }
 
 .social-links {
-  margin-top: 1.5rem;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .social-links a {
-  margin: 0 0.75rem;
-  font-weight: 600;
-  color: #69418b;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #6a1b9a;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.social-links a i {
+  margin-right: 8px;
+  font-size: 20px;
+  vertical-align: middle;
 }
 
 /* Gallery */
@@ -264,11 +314,12 @@ nav a:hover::after {
 
 /* Footer */
 footer {
-  background: #69418b;
-  color: white;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 20px;
   margin-top: 2rem;
+  background-color: #f9f9f9;
+  color: #f3ae17;
+  font-size: 0.9rem;
 }
 
 /* Shared Mobile Navigation */
