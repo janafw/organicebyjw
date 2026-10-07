@@ -16,31 +16,7 @@
   <link rel="stylesheet" href="css/style.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
   <style>
-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #ffffff;
-      flex-wrap: nowrap; /* prevent wrapping */
-    }
-    .left-header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: nowrap; /* no wrap */
-      flex-shrink: 1;
-      min-width: 0; /* prevent overflow */
-    }
-    .logo img {
-      display: block;
-      max-height: 50px;
-      max-width: 150px;
-      width: auto;
-      height: auto;
-      flex-shrink: 1;
-    }
-    .button-group {
+.button-group {
       display: flex;
       gap: 10px;
       flex-shrink: 0; /* prevent buttons from shrinking */
@@ -60,13 +36,6 @@ header {
     }
     .contact-link-button:hover {
       background-color: #53157a;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap; /* wrap nav links */
-      justify-content: flex-end;
-      width: 100%; /* full width nav on small devices */
-      margin-top: 10px;
     }
 .hero {
       background: linear-gradient(to right, #f3ae17, #69418b);
@@ -142,16 +111,7 @@ header {
     }
     /* Responsive tweaks */
     @media (max-width: 600px) {
-      header {
-        padding: 10px 10px;
-      }
-      nav {
-        margin-top: 8px;
-      }
-      nav a {
-        margin: 6px 8px;
-        font-size: 0.9rem;
-      }
+
       .hero {
         padding: 40px 15px;
       }
@@ -176,34 +136,7 @@ header {
         padding: 15px;
       }
     }
-/* Responsive Design */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-      }
-      nav a {
-        margin: 10px;
-        font-size: 14px;
-      }
-      /* Hide nav by default on mobile */
-      nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-      }
-      nav.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
-      }
-    }
+
 </style>
 </head>
 <body>
