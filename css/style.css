@@ -172,11 +172,6 @@ nav a:hover::after {
 }
 
 /* Contact Section */
-.contact {
-  background: #fffffff;
-  padding: 2rem;
-  text-align: center;
-}
 
 .contact form {
   max-width: 600px;
@@ -324,6 +319,15 @@ footer {
 
 /* Shared Mobile Navigation */
 @media (max-width: 768px) {
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .content-section {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
   .menu-toggle {
     display: flex;
   }
