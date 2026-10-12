@@ -182,7 +182,8 @@ nav a:hover::after {
 }
 
 .contact input,
-.contact textarea {
+.contact textarea,
+.contact select {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -218,6 +219,18 @@ nav a:hover::after {
   border-radius: 10px;
   box-sizing: border-box;
   width: 90%;
+}
+
+.content-section h2 {
+  color: #69418b;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.content-section ul {
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .step {
